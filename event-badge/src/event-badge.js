@@ -21,66 +21,53 @@ class EventBadge extends LitElement {
       text-align: center;
       background-color: var(--event-badge-background-color);
     }
-
-    main {
-      flex-grow: 1;
+    .container {
+      background-color: #867b7b;
+      border-radius: 10px;
+      border: 1px solid #000;
+      width: 400px;
     }
 
-    .logo {
-      margin-top: 36px;
-      animation: app-logo-spin infinite 20s linear;
+    .image {
+      width: 60%;
     }
-
-    @keyframes app-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
+    .header {
+      background-color: #f6ebeb;
+      padding-top: 1%;
     }
-
-    .app-footer {
-      font-size: calc(12px + 0.5vmin);
-      align-items: center;
+    .info {
+      font-size: 1rem;
+      text-align: left;
+      padding: 0 1rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background-color: #f6ebeb;
     }
-
-    .app-footer a {
-      margin-left: 5px;
-    }
+    
   `;
 
   constructor() {
     super();
-    this.header = 'My app';
+    this.header = 'Brand Here';
+    this.image = 'https://i.seadn.io/gae/2hDpuTi-0AMKvoZJGd-yKWvK4tKdQr_kLIpB_qSeMau2TNGCNidAosMEvrEXFO9G6tmlFlPQplpwiqirgrIPWnCKMvElaYgI-HiVvXc?auto=format&w=1000';
+    this.name = 'Sir Shrek';
+    this.title = 'Swamp Monster'
+    this.occupation = 'King of the Swamp'
   }
 
   render() {
     return html`
       <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
-
-        <p>Edit <code>src/EventBadge.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
+        <div class="container">
+          <div class="header"><h1>${this.header}</h1></div>
+          <img class="image" src="${this.image}"/>
+          <div class="info">
+            <div class="name">${this.name}</div>
+            <div class="title">${this.title}</div>
+            <div class="occupation">${this.occupation}</div>
+          </div>
+        </div>
       </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
     `;
   }
 }
