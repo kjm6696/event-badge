@@ -22,18 +22,29 @@ class EventBadge extends LitElement {
       background-color: var(--event-badge-background-color);
     }
     .container {
-      background-color: #867b7b;
+      background-color: #962b2b;
       border-radius: 10px;
       border: 1px solid #000;
       width: 400px;
+      margin-top: 5%;
     }
 
     .image {
-      width: 60%;
+      width: 50%;
+      left: 15%;
+      position: flex;
+      margin-top: 4%;
     }
     .header {
-      background-color: #f6ebeb;
+      background-color: #787878;
       padding-top: 1%;
+      border-radius: 10px 10px 0 0;
+      color: white;
+      position: flex;
+      letter-spacing: 5px;
+      height: 81px;
+      font-family: 'arial-black', sans-serif;
+      top: 0;
     }
     .info {
       font-size: 1rem;
@@ -41,7 +52,20 @@ class EventBadge extends LitElement {
       padding: 0 1rem;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      background-color: #f6ebeb;
+      background-color: #962b2b;
+      border-radius: 0 0 10px 10px;
+      color: #ffffff;
+      font-family: 'papyrus', Fantasy;
+    }
+    .circle {
+      width: 17px;
+      height: 17px;
+      left: 50%;
+      top: 6%;
+      border-radius: 50%;
+      background-color: #000000;
+      display: block;
+      position: absolute;
     }
     
   `;
@@ -59,7 +83,11 @@ class EventBadge extends LitElement {
     return html`
       <main>
         <div class="container">
-          <div class="header"><h1>${this.header}</h1></div>
+          <div class="header">
+          <div class="circle"></div>
+            <h1>${this.header}</h1>
+            
+          </div>
           <img class="image" src="${this.image}"/>
           <div class="info">
             <div class="name">${this.name}</div>
