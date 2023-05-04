@@ -21,7 +21,7 @@ export class BadgeList extends LitElement {
   }
 
   updateBadgeList() {
-    const address = new URL('../assets/badges.json', import.meta.url).href;
+    const address = new URL('../api/badges.js', import.meta.url).href;
     fetch(address)
       .then(response => {
         if (response.ok) {
