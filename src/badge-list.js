@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import './event-badge.js';
+import '../api/badges.js';
 
 export class BadgeList extends LitElement {
   static get tag() {
