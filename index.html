@@ -15,14 +15,23 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
+    .project {
+      display: flex;
+      flex-direction: row;
+    }
   </style>
   <title>event-badge</title>
 </head>
 
 <body>
-  <event-badge></event-badge>
-
-  <script type="module" src="./src/event-badge.js"></script>
+  <!-- <div class="project">
+    <event-badge></event-badge>
+  </div> -->
+  <badge-list></badge-list>
+  <script type="module">
+    import './src/event-badge.js';
+    import './src/badge-list.js';
+  </script>
 </body>
 
 </html>

@@ -1,24 +1,21 @@
+/* eslint-disable lit/no-native-attributes */
 /* eslint-disable lit-a11y/alt-text */
 import { LitElement, html, css } from 'lit';
 
 class EventBadge extends LitElement {
   static properties = {
-    header: { type: String },
+    image: { type: String, Reflect: true },
+    name: { type: String, Reflect: true },
+    job: { type: String, Reflect: true },
+    occupation: { type: String, Reflect: true },
+    companyLogo: { type: String, Reflect: true },
   };
 
   static styles = css`
     :host {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
-      margin: 0 auto;
+      margin: 1 auto;
       text-align: center;
-      background-color: var(--event-badge-background-color);
     }
     .container {
       background-color: #898989;
@@ -41,7 +38,7 @@ class EventBadge extends LitElement {
       padding-top: 1%;
       border-radius: 10px 10px 0 0;
       color: white;
-      position: flex;
+      position: relative;
       letter-spacing: 20px;
       height: 81px;
       /* font-family: 'arial-black', sans-serif; */
@@ -62,18 +59,16 @@ class EventBadge extends LitElement {
       font-family: 'papyrus', Fantasy;
     }
     .circle {
-      width: 17px;
-      height: 17px;
-      left: 50%;
-      top: 4%;
-      text-transform: uppercase;
-      border-radius: 50%;
+      width: 15px;
+      height: 15px;
       background-color: #000000;
-      display: block;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
       position: absolute;
     }
 
-    p {
+    .headText {
       position: relative;
       top: 30%;
       font-stretch: expanded;
@@ -111,7 +106,7 @@ class EventBadge extends LitElement {
     this.tv =
       'https://purepng.com/public/uploads/large/purepng.com-old-televisiontvtelecommunicationmonochromeblack-and-whittelevisionoldblack-and-whiteclipart-1421526536097wgqy0.png';
     this.name = 'Sir Shrek';
-    this.title = 'Swamp Monster';
+    this.job = 'Swamp Monster';
     this.occupation = 'King of the Swamp';
     this.companyLogo =
       'https://www.logolynx.com/images/logolynx/4e/4ea5536c64b9a89540dfcac2ca4e16f9.png';
@@ -122,14 +117,8 @@ class EventBadge extends LitElement {
       <main>
         <div class="container">
           <div class="header">
-            <div class="blocks">
-              <div class="1block"></div>
-              <div class="2block"></div>
-              <div class="3block"></div>
-              <div class="4block"></div>
-            </div>
-          <div class="circle"></div>
-              <p><h2>${this.header}</h2></p>
+            <div class="circle"></div>
+              <p class="headText"><h2>${this.header}</h2></p>
           </div>
           <div class="img-container">
           <img class="image" src="${this.image}"/>
@@ -137,7 +126,7 @@ class EventBadge extends LitElement {
           </div>
           <div class="info">
             <div class="name">${this.name}</div>
-            <div class="title">${this.title}</div>
+            <div class="job">${this.job}</div>
             <img class="companyLogo" src="${this.companyLogo}"/>
             <div class="occupation">${this.occupation}</div>
           </div>
